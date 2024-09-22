@@ -18,10 +18,6 @@ mat-checkbox{
     padding: 0;
 }
 
-.tasks-container{
-    /* border: 2px solid red; */
-}
-
 .new-task-area{
     display: flex;
     align-items: center;

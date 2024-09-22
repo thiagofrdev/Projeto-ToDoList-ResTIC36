@@ -1,4 +1,6 @@
 <div class="tasks-container">
+
+  <!-- Área para adicionar tarefas -->
   <div class="new-task-area">
     <mat-form-field class="example-full-width">
       <mat-label>Nova tarefa</mat-label>
@@ -8,8 +10,8 @@
     <button id="btn-addTask" mat-fab (click)="addTask(taskTitle.value); taskTitle.value=''">+</button>
   </div>
 
+  <!-- Lista de tarefas -->
   <div class="tasks-list">
-    <!-- Lista de tarefas -->
     <mat-card *ngFor="let task of tasks" [ngClass]="{'task-completed': task.completed}">
       
       <!-- Checkbox para marcar tarefa como completa -->
