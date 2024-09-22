@@ -1,27 +1,81 @@
-# Todolist
+# To-Do List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
+Desenvolvedor: Thiago Ferreira Ribeiro
 
-## Development server
+Trilha: FullStack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 1. Descrição do projeto
 
-## Code scaffolding
+Este projeto é uma aplicação de gerenciamento de tarefas (To-Do List), desenvolvida com **Angular** e **Angular Material**, com o objetivo de proporcionar uma interface visualmente agradável, responsiva e intuitiva para os usuários. A aplicação inicialmente permite a criação, visualização, marcação e exclusão de tarefas, com destaque para a capacidade de marcar uma tarefa como concluída, alterando o estilo visual do card para indicar sua finalização.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A aplicação utiliza o **json-server** para simular uma API REST, facilitando o gerenciamento das tarefas e permitindo que as mesmas sejam persistidas entre as sessões.
 
-## Build
+### Principais Funcionalidades:
+- Adicionar novas tarefas.
+- Marcar/desmarcar tarefas como concluídas (com destaque visual).
+- Remover tarefas.
+- Interface responsiva, adaptada para diferentes tamanhos de tela.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 2. Instruções de como executar a aplicação
 
-## Running unit tests
+### Pré-requisitos:
+- **Node.js** instalado (você pode verificar a versão com o comando `node -v`).
+- **Angular CLI** instalado globalmente. Se não estiver instalado, você pode fazê-lo com o comando:
+  ```bash
+  npm install -g @angular/cli
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Passo a passo para rodar a aplicação:
+#### 1. Clone o repositório:
+   `npm install`
 
-## Running end-to-end tests
+#### 2. Instale as dependências:
+Dentro da pasta do projeto, execute:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+ `npm install`
 
-## Further help
+#### 3. Inicie o json-server:
+O `json-server` simula uma API REST para salvar as tarefas. Para iniciar o servidor, execute o seguinte comando:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+`npx json-server --watch db.json`
+
+#### 4. Inicie a aplicação Angular:
+Em outro terminal (deixe o json-server rodando), execute:
+
+`ng serve`
+
+A aplicação será executada no ambiente de desenvolvimento. Acesse a aplicação pelo navegador em: `http://localhost:4200`
+
+## Estrutura de Pastas:
+- `src/`: Contém os arquivos de código fonte da aplicação.
+- `service/`: Contém o arquivo com os métodos para comunicação com o banco de dados json
+- `tasks/`: Componentes relacionados ao gerenciamento das tarefas.
+- `db.json`: Arquivo que serve como banco de dados simulado para o json-server.
+
+## 3. Tecnologias utilizadas
+As seguintes tecnologias foram utilizadas no desenvolvimento deste projeto:
+
+### Frontend:
+- **Angular**: Framework para construção da interface web.
+- **Angular Material**: Biblioteca de componentes de UI, utilizados para criar uma interface moderna e responsiva.
+- **TypeScript**: Linguagem de programação tipada utilizada para desenvolver com Angular.
+- **HTML5** e **CSS3**: Linguagens de marcação e estilo utilizadas para construir a interface visual.
+
+### Backend (simulado):
+- **json-server**: Ferramenta para simular uma API REST utilizando o arquivo db.json, onde as tarefas são armazenadas.
+
+## 4. Possíveis melhorias futuras
+Algumas melhorias podem ser implementadas nas próximas versões do projeto, tais como:
+
+### Funcionalidades:
+- **Edição de tarefas**: Implementar a possibilidade de editar o título de uma tarefa.
+- **Filtros de visualização**: Adicionar filtros para visualizar apenas tarefas concluídas, não concluídas, ou todas.
+- **Datas de vencimento**: Permitir o usuário definir uma data de vencimento para as tarefas e destacar aquelas que estão próximas ou ultrapassaram o prazo.
+- **Ordenação das tarefas**: Adicionar a funcionalidade para ordenar as tarefas por título, data de criação ou status (concluída/não concluída).
+
+### Interface:
+- **Notificações**: Exibir mensagens de sucesso ou erro ao criar, atualizar ou excluir tarefas.
+- **Melhoria na responsividade**: Ajustes finos para garantir uma experiência ainda mais fluida em dispositivos móveis.
+
+### Integração:
+- **Autenticação de usuários**: Implementar um sistema de login, permitindo que cada usuário tenha sua própria lista de tarefas.
+- **Integração com banco de dados real**: Substituir o json-server por uma API real e persistir os dados em um banco de dados como MongoDB ou PostgreSQL.
