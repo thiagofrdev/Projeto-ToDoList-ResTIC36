@@ -1,0 +1,30 @@
+<div class="tasks-container">
+  <div class="new-task-area">
+    <mat-form-field class="example-full-width">
+      <mat-label>Nova tarefa</mat-label>
+      <input #taskTitle type="text" matInput placeholder="Ex: Ir ao médico">
+    </mat-form-field>
+
+    <button id="btn-addTask" mat-fab (click)="addTask(taskTitle.value); taskTitle.value=''">+</button>
+  </div>
+
+  <div class="tasks-list">
+    <!-- Lista de tarefas -->
+    <mat-card *ngFor="let task of tasks" [ngClass]="{'task-completed': task.completed}">
+      
+      <!-- Checkbox para marcar tarefa como completa -->
+      <mat-checkbox
+        id="task-checkbox-completed" 
+        type="checkbox" 
+        [checked]="task.completed" 
+        (change)="updateTask(task)" 
+      />
+
+      <!-- Exibição do título da tarefa -->
+      <span id="task-text" [ngClass]="{'completed': task.completed}">{{ task.title }}</span>
+
+      <!-- Botão para remover a tarefa -->
+      <button id="task-delete-button" color="warn" mat-flat-button (click)="deleteTask(task.id!)">Apagar</button>
+    </mat-card>
+  </div>
+</div>
