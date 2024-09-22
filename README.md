@@ -21,27 +21,28 @@ A aplicação utiliza o **json-server** para simular uma API REST, facilitando o
 ### Pré-requisitos:
 - **Node.js** instalado (você pode verificar a versão com o comando `node -v`).
 - **Angular CLI** instalado globalmente. Se não estiver instalado, você pode fazê-lo com o comando:
-  ```bash
-  npm install -g @angular/cli
+
+      npm install -g @angular/cli
 
 ### Passo a passo para rodar a aplicação:
 #### 1. Clone o repositório:
-   `npm install`
+    git clone <URL_DO_SEU_REPOSITORIO>
+    cd <nome_da_pasta_clonada>
 
 #### 2. Instale as dependências:
 Dentro da pasta do projeto, execute:
 
- `npm install`
+    npm install
 
 #### 3. Inicie o json-server:
 O `json-server` simula uma API REST para salvar as tarefas. Para iniciar o servidor, execute o seguinte comando:
 
-`npx json-server --watch db.json`
+    npx json-server --watch db.json
 
 #### 4. Inicie a aplicação Angular:
 Em outro terminal (deixe o json-server rodando), execute:
 
-`ng serve`
+    ng serve
 
 A aplicação será executada no ambiente de desenvolvimento. Acesse a aplicação pelo navegador em: `http://localhost:4200`
 
